@@ -1,10 +1,19 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
 
 const App = () => {
 
   return (
-    <div>
-      <h1>Hello, World!</h1>
+    <div className="App">
+      <header>
+        {/* Import Nav here */}
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
     </div>
   )
 }
