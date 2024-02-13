@@ -1,13 +1,14 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
+import Nav from './components/Nav'
 
 const App = () => {
 
   return (
     <div className="App">
       <header>
-        {/* Import Nav here */}
+        {<Nav />}
       </header>
       <main>
         <Routes>
