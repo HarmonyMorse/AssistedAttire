@@ -4,7 +4,6 @@ const Outfits = ({ outfits }) => {
     return (
         <div>
             <h1>Outfits</h1>
-            {console.log(outfits)}
             <ul>
                 {outfits.map((outfit) => (
                     <li key={outfit._id}>

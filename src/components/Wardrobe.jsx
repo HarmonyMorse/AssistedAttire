@@ -6,7 +6,7 @@ const Wardrobe = ({ clothingItems }) => {
             <h1>Wardrobe</h1>
             <ul>
                 {clothingItems.map((item) => (
-                    <li key={item.id}>
+                    <li key={item._id}>
                         <Link to={`/wardrobe/${item._id}`}>
                             <h2>{item.name}</h2>
                         </Link>
