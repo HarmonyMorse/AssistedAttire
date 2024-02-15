@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import NewItem from './components/NewItem'
 import Wardrobe from './components/Wardrobe'
+import ClothingItemDetail from './components/ClothingItemDetail'
 
 const App = () => {
   const [clothingItems, setClothingItems] = useState([])
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/wardrobe" element={<Wardrobe clothingItems={ clothingItems } />} />
           <Route path="/wardrobe/new" element={<NewItem />} />
+          <Route path="/wardrobe/:id" element={<ClothingItemDetail />} />
         </Routes>
       </main>
     </div>
