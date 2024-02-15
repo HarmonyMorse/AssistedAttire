@@ -4,6 +4,7 @@ const Wardrobe = ({ clothingItems }) => {
     return (
         <div>
             <h1>Wardrobe</h1>
+            <Link to="/wardrobe/new">Add Clothing Item</Link>
             <ul>
                 {clothingItems.map((item) => (
                     <li key={item._id}>
