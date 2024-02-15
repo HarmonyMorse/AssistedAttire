@@ -1,17 +1,25 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import Client from "../assets/services/api"
 
 const ClothingItemDetail = () => {
     const { id } = useParams()
     const [clothingItem, setClothingItem] = useState({})
+    const [outfits, setOutfits] = useState([])
 
     useEffect(() => {
         const getClothingItem = async () => {
             let res = await Client.get(`/clothingItems/${id}`)
             setClothingItem(res.data)
         }
+
+        const getOutfits = async () => {
+            let res = await Client.get('/outfits')
+            res = res.data.filter((outfit) => outfit.clothingItems.includes(id))
+            setOutfits(res)
+        }
         getClothingItem()
+        getOutfits()
     }, [id])
 
     return (
@@ -25,6 +33,15 @@ const ClothingItemDetail = () => {
             <p>Brand: {clothingItem.brand}</p>
             <p>Size: {clothingItem.size}</p>
             <p>Status: {clothingItem.status}</p>
+            <div>Outfits:
+                <ul>
+                    {outfits.map((outfit) => (
+                        <Link to={`/outfits/${outfit._id}`} key={outfit._id}>
+                            <li>{outfit.name}</li>
+                        </Link>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }
