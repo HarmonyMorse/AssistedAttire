@@ -118,7 +118,7 @@ const OutfitEdit = ({ clothingItems }) => {
                         </div>
                     ))}
                 </div>
-                <input type='submit' value='Update Outfit' />
+                <input type='submit' value='Update Outfit!' />
                 <div className='EditOutfitFormDiv FormSubmitDiv'>
                 </div>
             </form>
