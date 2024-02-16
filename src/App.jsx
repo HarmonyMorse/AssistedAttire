@@ -10,6 +10,7 @@ import ClothingItemDetail from './components/ClothingItemDetail'
 import Outfits from './components/Outfits'
 import NewOutfit from './components/NewOutfit'
 import OutfitDetail from './components/OutfitDetail'
+import OutfitEdit from './components/OutfitEdit'
 
 const App = () => {
   const [clothingItems, setClothingItems] = useState([])
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/outfits" element={<Outfits outfits={outfits} />} />
           <Route path="/outfits/new" element={<NewOutfit clothingItems={clothingItems} />} />
           <Route path="/outfits/:id" element={<OutfitDetail />} />
+          <Route path="/outfits/:id/edit" element={<OutfitEdit clothingItems={clothingItems} />} />
         </Routes>
       </main>
     </div>
