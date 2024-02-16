@@ -4,12 +4,15 @@ const Nav = () => {
 
     return (
         <nav className="navbar">
-            <h4>Assisted Attire</h4>
+            <NavLink to="/">
+                <h4>Assisted Attire</h4>
+            </NavLink>
             <div>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/wardrobe">Wardrobe</NavLink>
                 <NavLink to="/outfits">Outfits</NavLink>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/wishlist">Wishlist</NavLink>
+                {/* <NavLink to="/profile">Profile</NavLink> */}
             </div>
         </nav>
     )
