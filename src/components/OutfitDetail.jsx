@@ -28,6 +28,7 @@ const OutfitDetail = () => {
                     </Link>
                 ))}
             </ul>
+            <Link to={`/outfits/${id}/edit`}>Edit</Link>
         </div>
     )
 }
