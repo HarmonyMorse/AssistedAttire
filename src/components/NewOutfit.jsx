@@ -1,7 +1,10 @@
 import { useState } from "react"
 import Client from "../assets/services/api"
+import { useNavigate } from "react-router-dom"
 
 const NewOutfit = ({ clothingItems }) => {
+    const navigate = useNavigate()
+
     const initialFormState = {
         name: '',
         occasion: '',
@@ -27,7 +30,7 @@ const NewOutfit = ({ clothingItems }) => {
         setFormState({ ...formState, selectedClothingItems })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             let newOutfit = {
@@ -37,8 +40,9 @@ const NewOutfit = ({ clothingItems }) => {
                 notes: formState.notes,
                 clothingItems: formState.selectedClothingItems,
             }
-            Client.post('/outfits', newOutfit)
+            await Client.post('/outfits', newOutfit)
             setFormState(initialFormState)
+            navigate('/outfits')
         } catch (error) {
             console.log(error)
         }

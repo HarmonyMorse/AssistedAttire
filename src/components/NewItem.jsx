@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Client from '../assets/services/api'
+import { useNavigate } from 'react-router-dom'
 
 const NewItem = () => {
+    const navigate = useNavigate()
+
     const initialFormState = {
         name: '',
         notes: '',
@@ -36,6 +39,7 @@ const NewItem = () => {
             }
             await Client.post('/clothingItems', newItem)
             setFormState(initialFormState)
+            navigate('/clothingItems')
         } catch (error) {
             console.log(error)
         }
