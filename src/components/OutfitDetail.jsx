@@ -24,11 +24,11 @@ const OutfitDetail = () => {
             <ul>
                 {outfit.clothingItems?.map((item) => (
                     <Link to={`/wardrobe/${item._id}`} key={item._id}>
-                        <li>{item.name}</li>
+                        <li>{item.name} - {item.status.toLowerCase()}</li>
                     </Link>
                 ))}
             </ul>
-            <Link to={`/outfits/${id}/edit`}>Edit</Link>
+            {/* <Link to={`/outfits/${id}/edit`}>Edit</Link> */}
         </div>
     )
 }
